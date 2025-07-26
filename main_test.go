@@ -1,7 +1,6 @@
 package game
 
 import (
-	"github.com/Pavel22062003/game/game_process"
 	"testing"
 )
 
@@ -56,9 +55,9 @@ var game0cases = [][]gameCase{
 
 func TestGame0(t *testing.T) {
 	for caseNum, commands := range game0cases {
-		game_process.InitGame()
+		initGame()
 		for _, item := range commands {
-			answer := game_process.HandleCommand(item.command)
+			answer := handleCommand(item.command)
 			if answer != item.answer {
 				t.Error("case:", caseNum, item.step,
 					"\n\tcmd:", item.command,
